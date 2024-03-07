@@ -1,0 +1,39 @@
+[
+    {
+      "pelicula": "1.-Avatar(2009)",
+      "recaudacion": "recaudación $2,788,000,000",
+      "id":1,
+      "year":1999,
+      "genero":["terror"]
+    },
+    {
+      "pelicula": "2.-Titanic(1997)",
+      "recaudacion": "recaudación $2,187,000,000",
+      "id":2,
+      "genero":["terror"]
+    },
+    {
+      "pelicula": "3.-Sttar Wars Episode VII(2015)",
+      "recaudacion": "recaudación $2,068,000,000",
+      "id":3,
+      "genero":["terror"]
+    },
+    {
+      "pelicula": "4.-Avengers Infinity War(2018)",
+      "recaudacion": "recaudación $2,046,000,000",
+      "id":4,
+      "genero":["terror"]
+    },
+    {
+      "pelicula": "5.-Jurassic World(2015)",
+      "recaudacion": "recaudación $1,671,713,000",
+      "id":5,
+      "genero":["aventura"]
+    },
+    {
+      "pelicula": "2.-The Avengers (2012)",
+      "recaudacion": "recaudación $1,518,812,000",
+      "id":6,
+      "genero":["accion"]
+    }
+]

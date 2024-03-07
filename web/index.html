@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Probar API Rest</title>
+    <script type="module">
+        fetch("http://localhost:1234/movies")
+        .then(res => res.json())
+        .then(movies => {
+            const html = movies.map(movie => {
+                return `
+                    <article data-id=${movie.id}>
+                        <h2>${movie.pelicula}</h2>
+                        <p>${movie.recaudacion}</p>
+                        <button>Delete</button>
+                    </article>
+                `;
+            }).join('');
+            document.querySelector('main').innerHTML = html;
+            document.addEventListener('click', e => {
+                if (e.target.matches('button')) {
+                    const article = e.target.closest('article');
+                    const id = article.dataset.id;
+
+                    fetch(`http://localhost:1234/movies/${id}`, {
+                        method: 'DELETE',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                    })
+                    .then(res => res.json())
+                    .then(res => {
+                        if (res.message === "Pelicula Eliminada") {
+                            article.remove();
+                        }
+                    })
+                    .catch(error => console.error('Error:', error));
+                }
+            });
+        })
+        .catch(error => console.error('Error:', error));
+    </script>
+</head>
+<body>
+    <main></main>
+</body>
+</html>
